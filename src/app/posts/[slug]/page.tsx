@@ -14,6 +14,7 @@ import PostTitle from "../_components/postTitle";
 import WeekLabel from "../_components/weekLabel";
 import SectionTitle from "../_components/sectionTitle";
 import PostBodyText from "../_components/postText";
+import WeekData from "../_components/weekData/WeekData";
 
 export default async function Post(props: Params) {
   const params = await props.params;
@@ -53,11 +54,61 @@ export default async function Post(props: Params) {
             forcing myself to focus anymore. I'm just enjoying coding again.
             I'll never go back to social media.
           </PostBodyText>
+
+          <SectionTitle>
+            2. Fucking images! Optimising images for the web. BLAH! 🤮
+          </SectionTitle>
+          <PostBodyText>
+            {`This has had my life this week! After 10 years of coding, Iive never
+            really had to deal with optimizing images before. Thatis what
+            happens when you work on enterprise apps for your whole career. Iive
+            painfully discovered thereis a whole art to optimizing images for
+            the web. Itis not just a matter of exporting an image and slapping
+            it on a website! Itis been a bit of a grind, but Iive learned a few
+            things: Use SVGs for logos. They scale and look great at any size.
+            Use PNGs only when you need transparency in the image. Use JPGs for
+            everything else. Use <img /> tags over a <div /> with a background
+            image. Itis much better for accessibility and SEO. Use plain JPGs
+            and add effects like drop shadows and borders in code. It keeps the
+            file size low.`}
+          </PostBodyText>
         </div>
-        <div className="mt-[96px]">
-          <h4>SONG</h4>
-          <p>Anytime, Anywhere, Anyhow</p>
-          <p>Matt Maltese</p>
+        <div className="mt-[100px]">
+          <WeekData>
+            <WeekData.Item>
+              <WeekData.Label>Song</WeekData.Label>
+              <WeekData.Title>Anytime, Anywhere, Anyhow</WeekData.Title>
+              <WeekData.Author>Matt Maltese</WeekData.Author>
+            </WeekData.Item>
+
+            <WeekData.Item>
+              <WeekData.Label>Album</WeekData.Label>
+              <WeekData.Title>Charm</WeekData.Title>
+              <WeekData.Author>Clairo</WeekData.Author>
+            </WeekData.Item>
+
+            <WeekData.Item>
+              <WeekData.Label>Book</WeekData.Label>
+              <WeekData.Title>
+                Flatland - <span className="text-[12px]">(Finished)</span>
+              </WeekData.Title>
+              <WeekData.Author>Edwin A. Abbott</WeekData.Author>
+            </WeekData.Item>
+
+            <WeekData.Item>
+              <WeekData.Label>Book</WeekData.Label>
+              <WeekData.Title>Runaway Horses</WeekData.Title>
+              <WeekData.Author>Yukio Mishima</WeekData.Author>
+            </WeekData.Item>
+
+            <WeekData.Item>
+              <WeekData.Label>Book</WeekData.Label>
+              <WeekData.Title>
+                Star Wars: Episode III - Revenge of the Sith
+              </WeekData.Title>
+              <WeekData.Author>Matthew Stover</WeekData.Author>
+            </WeekData.Item>
+          </WeekData>
         </div>
       </div>
 

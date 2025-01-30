@@ -2,6 +2,7 @@ import Author from "./Author";
 import Item from "./Item";
 import Label from "./Label";
 import Title from "./Title";
+import Suffix from "./Suffix";
 
 interface Props {
   children: React.ReactNode;
@@ -16,5 +17,6 @@ WeekData.Item = Item;
 WeekData.Label = Label;
 WeekData.Title = Title;
 WeekData.Author = Author;
+WeekData.Suffix = Suffix;
 
 export default WeekData;

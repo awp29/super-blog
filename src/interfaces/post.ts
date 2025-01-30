@@ -12,4 +12,14 @@ export type Post = {
   };
   content: string;
   preview?: boolean;
+  startAndEndDate: string;
+  week: number;
+  art: [
+    {
+      label: string;
+      title: string;
+      author: string;
+      suffix?: string;
+    }
+  ];
 };

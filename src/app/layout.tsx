@@ -5,6 +5,8 @@ import cn from "classnames";
 import { ibm, inter } from "./fonts";
 
 import "./globals.css";
+import Cursor from "./_components/cursor";
+import { CursorProvider } from "./CursorContext";
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
@@ -57,9 +59,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={cn("font-mono dark:bg-slate-900 dark:text-slate-400")}>
-        <div className="min-h-screen">{children}</div>
-      </body>
+      <CursorProvider>
+        <body className={cn("font-mono dark:bg-slate-900 dark:text-slate-400")}>
+          <Cursor />
+          {children}
+        </body>
+      </CursorProvider>
     </html>
   );
 }

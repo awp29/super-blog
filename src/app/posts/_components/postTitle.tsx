@@ -11,7 +11,7 @@ const PostTitle = (props: Props) => {
     <h1
       className={cn(
         inter.className,
-        "text-[#000626E6] text-[40px] font-semibold mt-[16px]"
+        "text-[32px] md:text-[40px] font-semibold mt-[16px]"
       )}
     >
       {children}

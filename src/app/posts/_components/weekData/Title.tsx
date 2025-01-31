@@ -1,3 +1,6 @@
+"use client";
+
+import { CursorType, useCursor } from "@/app/CursorContext";
 import Image from "next/image";
 
 interface Props {
@@ -6,8 +9,19 @@ interface Props {
 
 const Title = (props: Props) => {
   const { children } = props;
+
+  const { handleMouseEnter, handleMouseLeave, handleClick } = useCursor(
+    CursorType.externalLink
+  );
+
   return (
-    <a href="blah" className="text-[#000933A6] text-[14px] w-fit underline">
+    <a
+      href="blah"
+      className="text-[#000933A6] text-[14px] w-fit underline cursor-none"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+    >
       {children}
       <Image
         className="inline relative top-[-1px] ml-[2px]"

@@ -1,13 +1,15 @@
 import { inter } from "@/app/fonts";
 import cn from "classnames";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   className?: string;
+  active?: boolean;
   children: React.ReactNode;
 }
 
 const WeekLabel = (props: Props) => {
-  const { className, children } = props;
+  const { className, active, children } = props;
   return (
     <p
       className={cn(
@@ -17,7 +19,13 @@ const WeekLabel = (props: Props) => {
       )}
     >
       {children}
-      <span className="relative block h-[4px] w-full bg-[#F6D200] top-[-6px] z-[-1]" />
+
+      <span
+        className={twMerge(
+          "relative block h-[4px] w-full bg-[#F6D200] top-[-6px] z-[-1] invisible group-hover:visible",
+          active && "visible"
+        )}
+      />
     </p>
   );
 };

@@ -1,32 +1,37 @@
 "use client";
 
-import { CursorType, useCursor } from "@/app/CursorContext";
 import Image from "next/image";
 import Link from "next/link";
+import { CursorType, useCursor } from "../CursorContext";
 
-const BackLink = () => {
+interface Props {
+  slug: string;
+}
+
+const ViewPostLink = (props: Props) => {
+  const { slug } = props;
+
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursor(
-    CursorType.backLink
+    CursorType.viewPost
   );
 
   return (
     <Link
-      className="flex gap-[8px] text-[#000933A6] text-[14px] hover:underline w-fit mb-[32px] cursor-none"
-      href="/"
+      className="flex gap-[8px] text-[#0000EE] text-[14px] hover:underline w-fit cursor-none hover:z-[-2]"
+      href={`/posts/${slug}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
+      View week
       <Image
-        src="/icons/arrowLeft.svg"
+        src="/icons/arrowRight.svg"
         alt="an arrow pointing right"
         width={20}
         height={20}
-        color="#FFFFFF"
       />
-      Back
     </Link>
   );
 };
 
-export default BackLink;
+export default ViewPostLink;

@@ -6,11 +6,11 @@
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply text-[#000626E6] mt-[20px];
+  @apply mt-[20px];
 }
 
 .markdown h2 {
-  @apply text-[#000626E6] text-[32px] font-semibold mt-[58px] font-sans leading-snug;
+  @apply text-[28px] md:text-[32px] font-semibold mt-[58px] font-sans leading-snug break-words;
 }
 
 .markdown ul {
@@ -22,5 +22,5 @@
 }
 
 .markdown hr {
-  @apply border-[#000626E6] border-t-[1px] my-[64px];
+  @apply border-[#000933A6] border-t-[1px] my-[64px];
 }

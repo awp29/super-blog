@@ -48,7 +48,7 @@ export default async function Post(props: Params) {
                 return (
                   <React.Fragment key={`art-item-${index}`}>
                     <WeekData.Label>{item.label}</WeekData.Label>
-                    <WeekData.Title>
+                    <WeekData.Title href={item.link}>
                       {item.title}
                       {item.suffix && (
                         <span className="text-[12px]"> - ({item.suffix})</span>

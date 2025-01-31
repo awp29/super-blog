@@ -17,7 +17,7 @@ const ViewPostLink = (props: Props) => {
 
   return (
     <Link
-      className="flex gap-[8px] text-[#0000EE] text-[14px] hover:underline w-fit cursor-none hover:z-[-2]"
+      className="flex gap-[8px] text-[#0000EE] text-[14px] hover:underline w-fit cursor-none relative"
       href={`/posts/${slug}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

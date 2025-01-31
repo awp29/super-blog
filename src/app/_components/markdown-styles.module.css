@@ -24,3 +24,7 @@
 .markdown hr {
   @apply border-[#000933A6] border-t-[1px] my-[64px];
 }
+
+.markdown a {
+  @apply underline;
+}

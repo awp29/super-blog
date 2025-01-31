@@ -22,7 +22,7 @@ const WeekLabel = (props: Props) => {
 
       <span
         className={twMerge(
-          "relative block h-[4px] w-full bg-[#F6D200] top-[-6px] z-[-1] invisible group-hover:visible",
+          "relative block h-[4px] w-full bg-[#F6D200] top-[-6px] z-[-1] invisible",
           active && "visible"
         )}
       />

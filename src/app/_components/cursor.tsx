@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { CursorContext } from "../CursorContext";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { Zen_Dots } from "next/font/google";
 
 const Cursor: React.FC = () => {
   const { cursor, active, icon } = useContext(CursorContext);

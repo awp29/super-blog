@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 export enum CursorType {
   default,

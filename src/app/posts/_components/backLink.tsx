@@ -11,7 +11,7 @@ const BackLink = () => {
 
   return (
     <Link
-      className="flex gap-[8px] text-[#000933A6] text-[14px] hover:underline w-fit mb-[32px] cursor-none"
+      className="relative left-[-4px] flex gap-[8px] text-[#000933A6] text-[14px] hover:underline w-fit mb-[32px] cursor-none"
       href="/"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -22,7 +22,6 @@ const BackLink = () => {
         alt="an arrow pointing right"
         width={20}
         height={20}
-        color="#FFFFFF"
       />
       Back
     </Link>

@@ -19,6 +19,7 @@ export type Post = {
       label: string;
       title: string;
       author: string;
+      link: string;
       suffix?: string;
     }
   ];

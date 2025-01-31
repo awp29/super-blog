@@ -4,11 +4,12 @@ import { CursorType, useCursor } from "@/app/CursorContext";
 import Image from "next/image";
 
 interface Props {
+  href: string;
   children: React.ReactNode;
 }
 
 const Title = (props: Props) => {
-  const { children } = props;
+  const { href, children } = props;
 
   const { handleMouseEnter, handleMouseLeave, handleClick } = useCursor(
     CursorType.externalLink
@@ -16,7 +17,8 @@ const Title = (props: Props) => {
 
   return (
     <a
-      href="blah"
+      href={href}
+      target="_blank"
       className="text-[#000933A6] text-[14px] w-fit underline cursor-none"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

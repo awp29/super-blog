@@ -4,10 +4,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { CursorContext } from "../CursorContext";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { Zen_Dots } from "next/font/google";
+import cn from "classnames";
 
 const Cursor: React.FC = () => {
-  const { cursor, active, icon } = useContext(CursorContext);
+  const { active, icon } = useContext(CursorContext);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -23,16 +23,17 @@ const Cursor: React.FC = () => {
   }, []);
 
   const animateState = active ? "animate" : "initial";
-  console.log("icon", icon);
 
   return (
     <motion.div
       animate={animateState}
       style={{ top: position.y, left: position.x }}
-      className="fixed w-[40px] h-[40px] bg-[#F63123] rounded-full pointer-events-none translate-x-[-50%] translate-y-[-50%] z-[-1] flex items-center justify-center"
+      className={cn(
+        active ? "z-10" : "z-[-1]",
+        "fixed w-[40px] h-[40px] bg-[#F63123] rounded-full pointer-events-none translate-x-[-50%] translate-y-[-50%] flex items-center justify-center"
+      )}
       variants={{
         animate: {
-          zIndex: 10,
           width: 60,
           height: 60,
         },
@@ -43,7 +44,6 @@ const Cursor: React.FC = () => {
         className="w-0 h-0 cursor-none"
         variants={{
           animate: {
-            zIndex: 10,
             width: 32,
             height: 32,
           },

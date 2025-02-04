@@ -11,15 +11,17 @@ export enum CursorType {
 
 interface CursorContextProps {
   cursor: CursorType;
-  setCursor?: (cursor: CursorType) => void;
+  setCursor: (cursor: CursorType) => void;
   active: boolean;
-  setActive?: (active: boolean) => void;
+  setActive: (active: boolean) => void;
   icon: string;
 }
 
 const CursorContext = createContext<CursorContextProps>({
   cursor: CursorType.default,
+  setCursor: () => {},
   active: false,
+  setActive: () => {},
   icon: "",
 });
 
@@ -29,7 +31,7 @@ interface CursorProviderProps {
 
 const icons = {
   [CursorType.default]: "",
-  [CursorType.viewPost]: "/icons/eye.svg",
+  [CursorType.viewPost]: "/icons/whiteArrowRight.svg",
   [CursorType.externalLink]: "/icons/externalLink.svg",
   [CursorType.backLink]: "/icons/whiteArrowLeft.svg",
 };
@@ -53,16 +55,17 @@ const useCursor = (cursorType: CursorType) => {
   const { setCursor, setActive } = React.useContext(CursorContext);
 
   const handleMouseEnter = () => {
-    if (setCursor) setCursor(cursorType);
-    if (setActive) setActive(true);
+    setCursor(cursorType);
+    setActive(true);
   };
 
   const handleMouseLeave = () => {
-    if (setActive) setActive(false);
+    console.log("leaving");
+    setActive(false);
   };
 
   const handleClick = () => {
-    if (setActive) setActive(false);
+    setActive(false);
   };
 
   return {

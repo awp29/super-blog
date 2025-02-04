@@ -15,8 +15,6 @@ export default async function Post(props: Params) {
   const params = await props.params;
   const post = getPostBySlug(params.slug);
 
-  console.log("post", post);
-
   if (!post) {
     return notFound();
   }
